@@ -8,24 +8,3 @@
 * 系统一些API
 ### 1.3 运行环境
 * python3.6
-## 二、实现基本的备份程序
-我们下面会通过实际的代码脚本进行实现简单的备份程序
-### 2.1 代码实现
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-import os
-import time
-
-source = ["/home/shiyanlou/Code/"]
-target_dir = "/home/shiyanlou/Desktop/"
-
-target = target_dir + time.strftime('%Y%m%d%H%M%S') + '.zip'
-
-zip_command = "zip -qr %s %s" %(target, ' '.join(source))
-
-if os.system(zip_command) == 0:
-    print("Successful backup")
-else :
-    print("Backup Failed")
